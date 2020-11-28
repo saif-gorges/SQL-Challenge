@@ -7,7 +7,11 @@ join salaries
 on (employees.emp_no = salaries.emp_no)
 
 --List first name, last name, and hire date for employees who were hired in 1986.
-
+create view employees_1986
+as
+select first_name, last_name, hire_date
+from employees
+where hire_date like '%1986%'
 
 --List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 create view department_manager_details
@@ -48,7 +52,8 @@ on (dept_emp.emp_no = employees.emp_no)
 where dept_name = 'Sales'
 
 --List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
-
+create view sales_and_dev
+as
 select dept_emp.emp_no, last_name, first_name, dept_name
 from departments
 join dept_emp
