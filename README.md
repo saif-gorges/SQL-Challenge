@@ -27,25 +27,33 @@ The ERD (Entity Relationship Diagram) below was sketched out using 'Quick DBD.'
 There were 8 questions to be answered for this project. Postgres SQL was used to manipulate the database and aswer the following questions:
 
 
-1. Find the employee number, last name, first name, gender, and salary of every employee. The information needed was available in two tables, employees and salaries, selected the appropriate columns and then joined those tables with an inner join on emp_no.
-<br>
-
-2. List all employees who were hired in 1986. Selected the first_name, last_name, and hire_date columns from the employees table and then used the WHERE clause to set the date of hire condition.
+1. List the following details of each employee: employee number, last name, first name, sex, and salary.
+<br>![image](https://user-images.githubusercontent.com/69221324/114056458-b1f6f900-985f-11eb-9f08-7f0de9930f1d.png)
 
 
-3. Looked into managers, listing the department number and name, and the managers’ name, employee number, and employment dates. The relevant information was stored in three separate tables this time, which required two inner joins. As before, selected the relevant columns and then joined the dept_manager table with the departments table on dept_no., and further with employees table on emp_no.
+2. List first name, last name, and hire date for employees who were hired in 1986.
+<br>![image](https://user-images.githubusercontent.com/69221324/114056489-bd4a2480-985f-11eb-975f-6cdc4023ed83.png)
 
 
-4. List the departments of every employee along with their full name and employee number. The information needed was stored in two tables, employees and departments. However, the tables did not share any primary/foreign keys. Therefore, used a third table (dept_emp) to join the other two together. First joined employees to dept_emp on the shared emp_no, and then dept_emp to departments on the shared dept_no. Through these joins, displayed the department name of each employee along with their name and employee number.
+3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
+<br>![image](https://user-images.githubusercontent.com/69221324/114056565-cd620400-985f-11eb-8843-88b2c6bdda00.png)
 
 
-5. List all employees whose first name is "Hercules" and last names begin with "B." To do this, set two conditions joined by the AND clause, and made use of the SQL wildcard character % to search for last names beginning with “B”.
+4. List the department of each employee with the following information: employee number, last name, first name, and department name.
+<br>![image](https://user-images.githubusercontent.com/69221324/114056619-da7ef300-985f-11eb-800a-d5d0acfbe15e.png)
 
 
-6. List information only for employees in the Sales department. Instead of repeating the fourth query, created a view of it, named emp_dept_info, and queried the view, with the condition on the department name being “Sales”.
+5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+<br>![image](https://user-images.githubusercontent.com/69221324/114057030-3ba6c680-9860-11eb-9925-43cd0eaf4dd1.png)
 
 
-7. Used the same query as in the sixth, and add the condition to look into "Development" department as well.
+6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
+<br>![image](https://user-images.githubusercontent.com/69221324/114057096-47928880-9860-11eb-8648-3c1d97c40cc7.png)
 
 
-8. Count how many employees shared the same last name. To do this, selected the last_name column from the employees table and then also used the COUNT() function on the same column. Further grouped the data by last names and ordered the data by the count of last names in descending order to see the last names that were most 
+7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
+<br>![image](https://user-images.githubusercontent.com/69221324/114057133-50835a00-9860-11eb-9138-53ceeff98772.png)
+
+
+8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
+<br>![image](https://user-images.githubusercontent.com/69221324/114057182-5a0cc200-9860-11eb-9691-5189cdeb409e.png)
